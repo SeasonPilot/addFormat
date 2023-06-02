@@ -8,6 +8,8 @@ folder = "."
 for folder_path, subfolders, files in os.walk(folder):
     # 获取当前文件夹的名称
     folder_name = os.path.basename(folder_path)
+    if folder_name == "chatgptbox":
+        continue
     # 生成要添加的内容，以文件夹名称作为 categories 的值
     content = "---\nlayout: post\ncategories: {}\n---\n".format(folder_name)
     # 遍历当前文件夹中的所有文件
